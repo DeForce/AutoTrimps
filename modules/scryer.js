@@ -143,9 +143,10 @@ function useScryerStance() {
         const enemy = getCurrentEnemy(1)
         let enemyAttack = enemy.attack
 
-        const {health: healthMod, block} = stanceModifiers(4)
+        const {health: healthMod, block: blockMod} = stanceModifiers(4)
 
         const maxHealth = game.global.soldierHealth * healthMod
+        const maxBlock = game.global.soldierHealth * blockMod
         const hasPierce = game.global.brokenPlanet && !game.global.mapsActive
 
         if (hasPierce && !game.global.mapsActive) {
@@ -153,11 +154,10 @@ function useScryerStance() {
             enemyAttack *= pierceDamage
         }
 
-        if (enemyAttack > maxHealth) {
-            console.log('Attack is higher than Scry health, moving to X')
-            setFormation(1);
-            wantToScry = false;
-            return;
+        if (enemyAttack > maxHealth || (enemyAttack > maxBlock && !hasPierce) ) {
+            autostancefunction()
+            wantToScry = false
+            return
         }
     }
 
