@@ -146,7 +146,7 @@ function useScryerStance() {
         const {health: healthMod, block: blockMod} = stanceModifiers(4)
 
         const maxHealth = game.global.soldierHealth * healthMod
-        const maxBlock = game.global.soldierHealth * blockMod
+        const maxBlock = game.global.soldierCurrentBlock * blockMod
         const hasPierce = game.global.brokenPlanet && !game.global.mapsActive
 
         if (hasPierce && !game.global.mapsActive) {
