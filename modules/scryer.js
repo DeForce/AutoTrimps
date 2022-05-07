@@ -148,7 +148,7 @@ function useScryerStance() {
         const maxHealth = game.global.soldierHealth * healthMod
         const hasPierce = game.global.brokenPlanet && !game.global.mapsActive
 
-        if (hasPierce) {
+        if (hasPierce && !game.global.mapsActive) {
             const pierceDamage = getPierceAmt()
             enemyAttack *= pierceDamage
         }
