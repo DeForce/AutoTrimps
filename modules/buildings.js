@@ -76,7 +76,10 @@ function buyFoodEfficientHousing() {
             'name': unlockedHousing[house],
             'ratio': ratio
         });
-        document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
+        const element = document.getElementById(unlockedHousing[house])
+        if (element) {
+            element.style.border = "1px solid #FFFFFF";
+        }
     }
     buildorder.sort(function (a, b) {
         return a.ratio - b.ratio;
