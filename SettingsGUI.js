@@ -1035,6 +1035,10 @@ function initializeAllSettings() {
     createSetting('Export60', '-60 AT Settings', 'Gives you an AT settings String that you can use to import. Use if you are less than z60. May not work for you perfectly, should really only be used as an example!', 'infoclick', 'Export60', null, 'Import Export');
     createSetting('Export550', '550+ AT Settings', 'Gives you an AT settings String that you can use to import. Use if you are z550+. May not work for you perfectly, should really only be used as an example! ', 'infoclick', 'Export550', null, 'Import Export');
     createSetting('CleanupAutoTrimps', 'Cleanup Saved Settings ', 'Deletes old values from previous versions of the script from your AutoTrimps Settings file.', 'infoclick', 'CleanupAutoTrimps', null, 'Import Export');
+
+    // Warp
+    createSetting('warpPressed', 'Warp', 'Warp', 'boolean', false, null, 'Warp');
+
     settingsProfileMakeGUI();
 }
 
