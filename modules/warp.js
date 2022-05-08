@@ -1,6 +1,7 @@
 function checkWarp() {
     if (getPageSetting('warpPressed')) {
-        console.log('checking warp')
+        game.global.lastOnline = new Date() - 3600 * 1000 * 10;
+        checkOfflineProgress()
         setPageSetting('warpPressed', false)
     }
 }
