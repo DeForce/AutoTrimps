@@ -7,8 +7,9 @@ function initializeAutoTrimps() {
     loadPageVariables();
     ATscriptLoad('','SettingsGUI');
     ATscriptLoad('','Graphs');
-    ATmoduleList = ['import-export', 'query', 'calc', 'portal', 'upgrades', 'heirlooms', 'buildings', 'jobs', 'equipment', 'gather', 'stance', 'maps', 'breedtimer', 'dynprestige', 'fight', 'scryer', 'magmite', 'nature', 'other', 'perks', 'fight-info', 'performance', 'ab', 'MAZ', 'warp'];
+    ATmoduleList = ['import-export', 'query', 'calc', 'portal', 'upgrades', 'heirlooms', 'buildings', 'jobs', 'equipment', 'gather', 'stance', 'maps', 'breedtimer', 'dynprestige', 'fight', 'scryer', 'warp', 'magmite', 'nature', 'other', 'perks', 'fight-info', 'performance', 'ab', 'MAZ'];
     for (var m in ATmoduleList) {
+        console.log('loading', m)
         ATscriptLoad(modulepath, ATmoduleList[m]);
     }
     debug('AutoTrimps - Zek Fork Loaded!', '*spinner3');
@@ -357,7 +358,9 @@ function mainLoop() {
     }
 
     // Warp
-    checkWarp()
+    if (getPageSetting('warpPressed')) {
+        checkWarp()
+    }
 }
 
 function guiLoop(){updateCustomButtons(),safeSetItems('storedMODULES',JSON.stringify(compareModuleVars())),getPageSetting('EnhanceGrids')&&MODULES.fightinfo.Update(),'undefined'!=typeof MODULES&&'undefined'!=typeof MODULES.performance&&MODULES.performance.isAFK&&MODULES.performance.UpdateAFKOverlay()}
