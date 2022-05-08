@@ -91,7 +91,8 @@ function buyFoodEfficientHousing() {
         bestfoodBuilding = bb.name;
     }
     if (bestfoodBuilding) {
-        document.getElementById(bestfoodBuilding).style.border = "1px solid #00CC01";
+        const element = document.getElementById(bestfoodBuilding)
+        if (element) element.style.border = "1px solid #00CC01";
         safeBuyBuilding(bestfoodBuilding);
     }
 }
@@ -112,7 +113,8 @@ function buyGemEfficientHousing() {
 	if (unlockedHousing[house] == "Gateway" && !canAffordBuilding('Gateway'))
             continue;
         obj[unlockedHousing[house]] = ratio;
-        document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
+        const element = document.getElementById(unlockedHousing[house])
+        if (element) element.style.border = "1px solid #FFFFFF";
     }
     var keysSorted = Object.keys(obj).sort(function (a, b) {
             return obj[a] - obj[b];
@@ -123,7 +125,8 @@ function buyGemEfficientHousing() {
         if (max === false) max = -1;
         if (game.buildings[keysSorted[best]].owned < max || max == -1) {
             bestBuilding = keysSorted[best];
-            document.getElementById(bestBuilding).style.border = "1px solid #00CC00";
+            const element = document.getElementById(bestBuilding)
+            if (element) element.style.border = "1px solid #00CC00";
             var skipWarp = false;
             if (getPageSetting('WarpstationCap') && bestBuilding == "Warpstation") {
                 if (game.buildings.Warpstation.owned >= (Math.floor(game.upgrades.Gigastation.done * getPageSetting('DeltaGigastation')) + getPageSetting('FirstGigastation')))
@@ -298,7 +301,8 @@ function RbuyFoodEfficientHousing() {
             'name': unlockedHousing[house],
             'ratio': ratio
         });
-        document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
+        const element = document.getElementById(unlockedHousing[house])
+        if (element) element.style.border = "1px solid #FFFFFF";
     }
     buildorder.sort(function (a, b) {
         return a.ratio - b.ratio;
@@ -310,7 +314,8 @@ function RbuyFoodEfficientHousing() {
         bestfoodBuilding = bb.name;
     }
     if (smithylogic(bestfoodBuilding, 'wood', false) && bestfoodBuilding) {
-        document.getElementById(bestfoodBuilding).style.border = "1px solid #00CC01";
+        const element = document.getElementById(bestfoodBuilding)
+        if (element) element.style.border = "1px solid #00CC01";
         RsafeBuyBuilding(bestfoodBuilding);
     }
     }
@@ -330,7 +335,8 @@ function RbuyGemEfficientHousing() {
         var cost = getBuildingItemPrice(building, "gems", false, 1);
         var ratio = cost / building.increase.by;
         obj[unlockedHousing[house]] = ratio;
-        document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
+        const element = document.getElementById(unlockedHousing[house])
+        if (element) element.style.border = "1px solid #FFFFFF";
     }
     var keysSorted = Object.keys(obj).sort(function (a, b) {
             return obj[a] - obj[b];
@@ -341,7 +347,8 @@ function RbuyGemEfficientHousing() {
         if (max === false) max = -1;
         if (game.buildings[keysSorted[best]].owned < max || max == -1) {
             bestBuilding = keysSorted[best];
-            document.getElementById(bestBuilding).style.border = "1px solid #00CC00";
+            const element = document.getElementById(bestBuilding)
+            if (element) element.style.border = "1px solid #00CC00";
             break;
         }
     }
