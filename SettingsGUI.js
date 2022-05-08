@@ -173,6 +173,7 @@ function initializeAllTabs() {
     createTabs("SA", "SA Settings");
     createTabs("Nature", "Nature Settings");
     createTabs("Display", "Display & Spam Settings");
+    createTabs("Warp", "Warp Stuff");
     createTabs("Import Export", "Import & Export Settings");
     var li_0 = document.createElement('li');
     var a_0 = document.createElement('a');
