@@ -358,9 +358,7 @@ function mainLoop() {
     }
 
     // Warp
-    if (getPageSetting('warpPressed')) {
-        checkWarp()
-    }
+    checkWarp()
 }
 
 function guiLoop(){updateCustomButtons(),safeSetItems('storedMODULES',JSON.stringify(compareModuleVars())),getPageSetting('EnhanceGrids')&&MODULES.fightinfo.Update(),'undefined'!=typeof MODULES&&'undefined'!=typeof MODULES.performance&&MODULES.performance.isAFK&&MODULES.performance.UpdateAFKOverlay()}
