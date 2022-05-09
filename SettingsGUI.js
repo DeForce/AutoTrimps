@@ -1039,6 +1039,11 @@ function initializeAllSettings() {
 
     // Warp
     createSetting('warpPressed', 'Warp', 'Warp', 'boolean', false, null, 'Warp');
+    createSetting('resetDailies', 'Reset Dailies', 'Reset Dailies', 'boolean', false, null, 'Warp');
+    createSetting('addHeirlooms', 'Add H/S', 'Add heirloom or spire cores', 'boolean', false, null, "Warp");
+    createSetting('addHeirloomAmount', 'Amount', 'Amount of loot to add', 'value', '100', null, "Warp");
+    createSetting('addHeirloomLevel', 'Zone', 'Zote Target', 'value', '100', null, "Warp");
+    createSetting('addHeirloomSpire', 'Add Spire Cores', 'Toggle spire cores', 'boolean', false, null, "Warp");
 
     settingsProfileMakeGUI();
 }
